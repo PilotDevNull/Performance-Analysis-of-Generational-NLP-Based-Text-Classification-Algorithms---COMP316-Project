@@ -1,0 +1,2 @@
+Model,Accuracy,Precision,Recall,F1_Score,Train_Time_s,Inference_Time_s,Train_Samples,Test_Samples
+BERT,0.8873,0.8555,0.9321,0.8922,4818.55,230.95,42000,18000
