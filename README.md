@@ -1,7 +1,7 @@
 <a id="top"></a>
 <p align="center"><img src="docs/readme/slides/slide-01.png" width="100%" alt="The Steam Curators. Performance Analysis of Generational NLP-Based Text Classification Algorithms: Naive Bayes, BiLSTM and BERT on 60,000 Steam reviews"></p>
 
-<p align="center"><img alt="COMP316 NLP" src="https://img.shields.io/badge/COMP316-Natural%20Language%20Processing-E89B1C?style=for-the-badge&labelColor=1A1024"> <img alt="UKZN 2026" src="https://img.shields.io/badge/UKZN-2026-1FAE74?style=for-the-badge&labelColor=1A1024"> <img alt="Python" src="https://img.shields.io/badge/Python-3.12-8B5CF6?style=for-the-badge&logo=python&logoColor=white&labelColor=1A1024"> <img alt="scikit-learn" src="https://img.shields.io/badge/scikit--learn-Naive%20Bayes-E8505F?style=for-the-badge&logo=scikitlearn&logoColor=white&labelColor=1A1024"> <img alt="TensorFlow" src="https://img.shields.io/badge/TensorFlow-BiLSTM-E89B1C?style=for-the-badge&logo=tensorflow&logoColor=white&labelColor=1A1024"> <img alt="Hugging Face" src="https://img.shields.io/badge/Transformers-BERT-8B5CF6?style=for-the-badge&logo=huggingface&logoColor=white&labelColor=1A1024"></p>
+<p align="center"><img alt="COMP316 NLP" src="https://img.shields.io/badge/COMP316-Natural%20Language%20Processing-E89B1C?style=for-the-badge&labelColor=082216"> <img alt="UKZN 2026" src="https://img.shields.io/badge/UKZN-2026-1FAE74?style=for-the-badge&labelColor=082216"> <img alt="Python" src="https://img.shields.io/badge/Python-3.12-60C896?style=for-the-badge&logo=python&logoColor=white&labelColor=082216"> <img alt="scikit-learn" src="https://img.shields.io/badge/scikit--learn-Naive%20Bayes-E8505F?style=for-the-badge&logo=scikitlearn&logoColor=white&labelColor=082216"> <img alt="TensorFlow" src="https://img.shields.io/badge/TensorFlow-BiLSTM-E89B1C?style=for-the-badge&logo=tensorflow&logoColor=white&labelColor=082216"> <img alt="Hugging Face" src="https://img.shields.io/badge/Transformers-BERT-60C896?style=for-the-badge&logo=huggingface&logoColor=white&labelColor=082216"></p>
 
 <h3 align="center"><i>“Measurable gains should justify engineering complexity.”</i></h3>
 
@@ -15,7 +15,7 @@
 <p align="center"><img src="docs/readme/banners/at-a-glance.png" width="100%" alt="At a glance: BERT reaches 88.7% accuracy on 18,000 unseen test reviews; Naive Bayes and the LSTM differ by 0.06 points; BERT takes about 160,000 times longer to train than Naive Bayes; 60,000 balanced reviews drawn from 94,922 collected across 100 games"></p>
 
 > [!NOTE]
-> This README presents the final report of **The Steam Curators** for COMP316 (Natural Language Processing, UKZN, May 2026), chapter by chapter. Every figure quoted here is taken from the saved notebook outputs and from [`bert_metrics.csv`](Locally%20Trained%20Bert%20Files/COMP316/bert_metrics.csv); the BERT numbers were also recomputed from the 18,000 rows of [`bert_predictions.csv`](Locally%20Trained%20Bert%20Files/COMP316/bert_predictions.csv).
+> This README presents our final report as **The Steam Curators** for COMP316 (Natural Language Processing, UKZN, May 2026), chapter by chapter. Every figure quoted here is taken from our saved notebook outputs and from [`bert_metrics.csv`](Locally%20Trained%20Bert%20Files/COMP316/bert_metrics.csv); the BERT numbers were also recomputed from the 18,000 rows of [`bert_predictions.csv`](Locally%20Trained%20Bert%20Files/COMP316/bert_predictions.csv).
 
 <p align="center"><img src="docs/readme/banners/00-abstract.png" width="100%" alt="Abstract"></p>
 
@@ -88,7 +88,7 @@ Reviews were collected through the Steam Web API, cleaned, balanced and split on
 ```
 .
 ├── README.md                                           this page: the full study and how to run it
-├── COMP316 Project Report FINAL.pdf                    the report as submitted
+├── COMP316 Project Report FINAL.pdf                    our report as submitted
 ├── COMP316_PROJECT_COMPLETE_Combined Notebooks.ipynb   preprocessing, Naive Bayes, LSTM and BERT in one
 │                                                       notebook, with every output from the final runs
 ├── docs/readme/                                        images used by this page (banners, figures)
@@ -157,7 +157,7 @@ jupyter notebook
 Open `Locally Trained Bert Files/COMP316/bert_steam_FINAL COMPLETE.ipynb`, set `DATA_PATH` in the Configuration cell to your local data folder, and run all cells. Expect about 80 minutes of training on a GTX 1060 plus about four minutes of inference.
 
 > [!IMPORTANT]
-> The fine-tuned weights (`model.safetensors`, a few hundred MB) are excluded from the repository by `.gitignore`, so `bert_steam_model/` holds only the configuration and tokeniser. `BertForSequenceClassification.from_pretrained('./bert_steam_model')` will not work from a fresh clone until the model has been re-trained or the weights file is restored. The per-review results that the report uses are all kept in `bert_predictions.csv`.
+> The fine-tuned weights (`model.safetensors`, a few hundred MB) are excluded from the repository by `.gitignore`, so `bert_steam_model/` holds only the configuration and tokeniser. `BertForSequenceClassification.from_pretrained('./bert_steam_model')` will not work from a fresh clone until the model has been re-trained or the weights file is restored. The per-review results that our report uses are all kept in `bert_predictions.csv`.
 
 ### D. Rebuild the dataset (optional)
 
@@ -380,7 +380,7 @@ Naive Bayes treats words as independent symbols and the LSTM learns its embeddin
 
 **Table 8.** A practical reading of the results. For high-volume or real-time classification, BERT's 231 seconds for 18,000 reviews may outweigh its accuracy advantage.
 
-Colab's free T4 GPU was not used for BERT because of instability on long runs and rate limits; the report notes that its projected time was not far from the local GTX 1060.
+Colab's free T4 GPU was not used for BERT because of instability on long runs and rate limits; we noted in our report that its projected time was not far from the local GTX 1060.
 
 [Back to top ↑](#top)
 
@@ -391,7 +391,7 @@ Colab's free T4 GPU was not used for BERT because of instability on long runs an
 - **Limited game coverage.** The data comes from 100 manually chosen games, and may not represent the whole Steam review ecosystem.
 - **Truncation in BERT.** 12.5% of reviews exceed 128 tokens and were truncated, which may have caused errors where the sentiment appears late in a long review.
 - **Overfitting had to be managed.** Both neural models overfit, so results depend on restoring the best validation epoch (Figures 3 and 4). The validation split and best-epoch restore for BERT were added after earlier runs overfit.
-- **Single run.** Each model was trained and scored once on one split, so the report gives no confidence intervals; differences of a fraction of a point, such as Naive Bayes against the LSTM, should not be treated as a ranking.
+- **Single run.** Each model was trained and scored once on one split, so we report no confidence intervals; differences of a fraction of a point, such as Naive Bayes against the LSTM, should not be treated as a ranking.
 - **Sarcasm and noise.** All three models struggled with sarcastic reviews. The LSTM did worse on extremely short reviews, and Naive Bayes was more easily confused by noisy text such as ASCII art and copied memes, despite the spam filter.
 - **Cleaning removes data.** About 32% of the raw reviews were removed by the cleaning steps, so the models are evaluated on cleaner text than the platform actually contains (no emoji, links or filtered profanity).
 - **Earlier duplicate problem.** Earlier experimental runs were affected by 2,076 duplicate reviews between training and test sets which led to a deduplication step before the train/test split.
@@ -430,9 +430,9 @@ Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.N., Kai
 
 ## AI disclosure
 
-As stated in the report, large language models (Claude by Anthropic and GitHub Copilot) were used as assistants during the project: generating boilerplate for the data-extraction pipeline and training loops, debugging Python errors in the LSTM and BERT implementations, and helping to phrase and proofread parts of the report. The group conceived and carried out the model architectures, hyperparameter choices, experimental design, data-cleaning logic and interpretation of results; no AI tool generated results or fabricated findings.
+As stated in our report, we used AI tools as assistants during the project: generating boilerplate for the data-extraction pipeline and training loops, debugging Python errors in the LSTM and BERT implementations, and helping to phrase and proofread parts of the report. We conceived and carried out the model architectures, hyperparameter choices, experimental design, data-cleaning logic and interpretation of results ourselves; no AI tool generated results or fabricated findings.
 
-This README was drafted with the help of Claude (Anthropic) from the report and notebooks, and its figures were checked against the saved notebook outputs and `bert_metrics.csv`.
+This README was drafted with the help of Claude (Anthropic) from our report and notebooks, and its figures were checked against the saved notebook outputs and `bert_metrics.csv`.
 
 ## Licence and attribution
 
